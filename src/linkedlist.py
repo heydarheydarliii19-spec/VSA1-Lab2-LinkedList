@@ -38,6 +38,19 @@ class SinglyLinkedList:
                 return
             current = current.next
         print("Element tapılmadı.")
+    def delete(self, value):
+        if self.head is None:
+            return
+        if self.head.data == value:
+            self.head = self.head.next
+            return
+        current = self.head
+        while current.next is not None:
+            if current.next.data == value:
+                current.next = current.next.next
+                return
+            current = current.next
+        print("Element tapılmadı.")
 #Tapşırıq 1:
 print("Tapşırıq 1:")
 node = Node(15)
@@ -68,3 +81,11 @@ for x in [10, 20, 40]:
     list4.append(x)
 list4.insert_after(20, 30)
 list4.display()
+
+# Tapşırıq 5: test
+print("Tapşırıq 5:")
+list5 = SinglyLinkedList()
+for x in [10, 20, 30, 40, 50]:
+    list5.append(x)
+list5.delete(30)
+list5.display()
