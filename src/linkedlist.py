@@ -28,6 +28,16 @@ class SinglyLinkedList:
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
+    def insert_after(self, target, data):
+        current = self.head
+        while current is not None:
+            if current.data == target:
+                new_node = Node(data)
+                new_node.next = current.next
+                current.next = new_node
+                return
+            current = current.next
+        print("Element tapılmadı.")
 #Tapşırıq 1:
 print("Tapşırıq 1:")
 node = Node(15)
@@ -50,3 +60,11 @@ for x in [20, 30, 40]:
     list3.append(x)
 list3.prepend(10)
 list3.display()
+
+# Tapşırıq 4: test
+print("Tapşırıq 4:")
+list4 = SinglyLinkedList()
+for x in [10, 20, 40]:
+    list4.append(x)
+list4.insert_after(20, 30)
+list4.display()
