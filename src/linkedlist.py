@@ -68,7 +68,7 @@ class SinglyLinkedList:
             current = current.next
         return count
     def max_min(self):
-        if self.head is None:  # siyahı boşdursa
+        if self.head is None:
             return None, None
         maximum = self.head.data
         minimum = self.head.data
@@ -80,6 +80,15 @@ class SinglyLinkedList:
                 minimum = current.data
             current = current.next
         return maximum, minimum
+    def reverse(self):
+        prev = None
+        current = self.head
+        while current is not None:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+        self.head = prev
 #Tapşırıq 1:
 print("Tapşırıq 1:")
 node = Node(15)
@@ -142,3 +151,11 @@ for x in [23, 8, 91, 15, 42]:
 maximum, minimum = list8.max_min()
 print("Maksimum element =", maximum)
 print("Minimum element =", minimum)
+
+# Tapşırıq 9: test
+print("Tapşırıq 9:")
+list9 = SinglyLinkedList()
+for x in [10, 20, 30, 40, 50]:
+    list9.append(x)
+list9.reverse()
+list9.display()
