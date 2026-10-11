@@ -6,28 +6,25 @@ class Node:
 
 class SinglyLinkedList:
     def __init__(self):
-        self.head = None  # siyahı əvvəlcə boşdur
+        self.head = None
 
     def append(self, data):
-        """Siyahının sonuna yeni element əlavə edir."""
         new_node = Node(data)
-        if self.head is None:  # siyahı boşdursa
+        if self.head is None:
             self.head = new_node
             return
         current = self.head
-        while current.next is not None:  # sonuncu düyünü tap
+        while current.next is not None:
             current = current.next
         current.next = new_node
 
     def display(self):
-        """Siyahını 10 -> 20 -> None formatında çap edir."""
         current = self.head
         while current is not None:
             print(current.data, end=" -> ")
             current = current.next
         print("None")
     def prepend(self, data):
-        """Siyahının əvvəlinə yeni element əlavə edir."""
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
