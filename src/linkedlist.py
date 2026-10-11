@@ -60,6 +60,14 @@ class SinglyLinkedList:
             current = current.next
         print("Element tapılmadı.")
         return False
+    def length(self):
+        """Siyahıdakı elementlərin sayını qaytarır."""
+        count = 0
+        current = self.head
+        while current is not None:
+            count += 1
+            current = current.next
+        return count
 #Tapşırıq 1:
 print("Tapşırıq 1:")
 node = Node(15)
@@ -106,3 +114,10 @@ for x in [10, 20, 30, 40]:
     list6.append(x)
 list6.search(30)
 list6.search(99)
+
+# Tapşırıq 7: test
+print("Tapşırıq 7:")
+list7 = SinglyLinkedList()
+for x in [11, 22, 33, 44, 55]:
+    list7.append(x)
+print("List length =", list7.length())
