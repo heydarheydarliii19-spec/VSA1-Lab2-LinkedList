@@ -61,13 +61,25 @@ class SinglyLinkedList:
         print("Element tapılmadı.")
         return False
     def length(self):
-        """Siyahıdakı elementlərin sayını qaytarır."""
         count = 0
         current = self.head
         while current is not None:
             count += 1
             current = current.next
         return count
+    def max_min(self):
+        if self.head is None:  # siyahı boşdursa
+            return None, None
+        maximum = self.head.data
+        minimum = self.head.data
+        current = self.head.next
+        while current is not None:
+            if current.data > maximum:
+                maximum = current.data
+            if current.data < minimum:
+                minimum = current.data
+            current = current.next
+        return maximum, minimum
 #Tapşırıq 1:
 print("Tapşırıq 1:")
 node = Node(15)
@@ -121,3 +133,12 @@ list7 = SinglyLinkedList()
 for x in [11, 22, 33, 44, 55]:
     list7.append(x)
 print("List length =", list7.length())
+
+# Tapşırıq 8: test
+print("Tapşırıq 8:")
+list8 = SinglyLinkedList()
+for x in [23, 8, 91, 15, 42]:
+    list8.append(x)
+maximum, minimum = list8.max_min()
+print("Maksimum element =", maximum)
+print("Minimum element =", minimum)
