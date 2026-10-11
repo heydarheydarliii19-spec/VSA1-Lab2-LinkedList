@@ -51,6 +51,15 @@ class SinglyLinkedList:
                 return
             current = current.next
         print("Element tapılmadı.")
+    def search(self, value):
+        current = self.head
+        while current is not None:
+            if current.data == value:
+                print("Element tapıldı.")
+                return True
+            current = current.next
+        print("Element tapılmadı.")
+        return False
 #Tapşırıq 1:
 print("Tapşırıq 1:")
 node = Node(15)
@@ -89,3 +98,11 @@ for x in [10, 20, 30, 40, 50]:
     list5.append(x)
 list5.delete(30)
 list5.display()
+
+# Tapşırıq 6: test
+print("Tapşırıq 6:")
+list6 = SinglyLinkedList()
+for x in [10, 20, 30, 40]:
+    list6.append(x)
+list6.search(30)
+list6.search(99)
