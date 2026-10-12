@@ -25,3 +25,5 @@ next istinadlarını dəyişirik. Məsələn, ortadakı elementi silmək üçün
 
 ## İcra təlimatı:
 python linkedlist.py 
+
+QEYD:Sizə bildirmək istərdim ki, bu mənim GitHubda ilk işim və bilmədiyim bir çox mövzu olduğu üçün Sİ  istifadə etmişəm.
